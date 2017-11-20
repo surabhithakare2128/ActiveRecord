@@ -72,7 +72,7 @@ class main{
 		accounts::findOne($id);
 		$disp= '<br>';
 		display::printThis($disp);
-        echo "<hr>";
+       		echo "<hr>";
 
 
 		$display='';
@@ -82,9 +82,8 @@ class main{
 		$record->id=45;
 		$record->delete();
 		echo 'AFTER DELETING<br>';
-		//display::printThis($display);
 		accounts::findAll();
-        echo "<hr>";
+        	echo "<hr>";
 
         echo '<h1>TODO TABLE</h1><br>';
         echo 'ALL RECORD0S OF TODOS';
@@ -99,21 +98,6 @@ class main{
         todos::findOne($id);
         display::printThis($disp);
         echo "<hr>";
-
-
-        //$display='';
-	/*
-        $disp= '<h3>DELETING FROM TODOS<br>';
-        display::printThis($disp);
-        $record=new todo();
-        $record->id=7;
-        $record->delete();
-        echo 'AFTER DELETING<br>';
-        //display::printThis($display);
-        todos::findAll();
-	display::printThis($disp);
-        echo "<hr>";
-	*/									
 	
 	echo 'INSERTING A NEW RECORD INTO TODOS';
         display::printThis($disp);
@@ -125,12 +109,9 @@ class main{
         $record->duedate='4755-23-23 00:00:00';
         $record->message='fi';
         $record->isdone='0';
-        //$record->password='123';*/
         $record->save();
         echo 'TABLE AFTER ADDING NEW RECORD <br>';
-        //display::printThis($disp);
         todos::findAll();
-        //$disp='<br>';
         display::printThis($disp);
         echo "<hr>";
 
@@ -140,7 +121,6 @@ class main{
 	$record->id=8;
 	$record->delete();
 	echo '<br>AFTER DELETING<br>';
-	//display::printThis($display);
 	todos::findAll();
 	display::printThis($disp);
 	echo "<hr>";
@@ -155,32 +135,12 @@ class main{
 	$record->duedate='';
 	$record->message='Hi';
 	$record->isdone='1';
-	/*$record->fname='hike';
-        $record->lname='luther';
-        $record->phone='111-323-3116';
-        $record->birthday='1946-07-01';
-        $record->gender='male';
-        $record->password='5643';*/
         $record->save();
-        //echo 'After update.<br>';
-        //display::printThis($disp);
         todos::findOne($id);
-        //$disp= '<br>';
         display::printThis($disp);
         echo "<hr>";
-
-	/*
-        $display='';
-        $display= '<h3>DELETING FROM TODOS<br>';
-        display::printThis($display);
-        $record=new todo();
-        $record->id=8;
-        $record->delete();
-        echo 'AFTER DELETING<br>';
-        //display::printThis($display);
-        todos::findAll();
-        echo "<hr>";*/
-    }
+	
+	}
 }
 
 ?>
