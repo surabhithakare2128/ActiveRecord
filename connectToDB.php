@@ -1,27 +1,28 @@
 <?php
 
-class connect{
-	protected static $database;
+class connectToDB{
+	protected static $db;
 	public function __construct(){
 		try{
-			self::$database=new PDO('mysql:host=sql2.njit.edu;dbname=st638','st638','adhere54');
-			self::$database->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-			echo 'Connected successfully. <br>';
+			self::$db=new PDO('mysql:host=sql2.njit.edu;dbname=st638','st638','adhere54');
+			self::$db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+			//echo 'Connected successfully. <br>';
 		}catch(PDOException $e){
 		       	echo 'connection failed: ' . $e-> getMessage() . '<br>';
 		}
 	}
 
 	public static function getConnect(){
-		if(!self::$database){
-			new connect();
+		if(!self::$db){
+			new connectToDB();
 		}
-		return self::$database;
+		return self::$db;
 	}
 }
 
-$database=connect::getConnect();
+/*
+$database=connectToDB::getConnect();
 //print_r($database);
 echo '<br>';
-
+*/
 ?>
